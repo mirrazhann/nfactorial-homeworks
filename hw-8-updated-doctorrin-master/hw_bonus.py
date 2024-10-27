@@ -60,4 +60,17 @@ group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"])
 
 def group_anagrams(words: list[str]) -> list[list[str]]:
     # write your code here
-    pass
+    anagrams = dict()
+
+    for word in words:
+        sorted_words = str(sorted(word))
+        if sorted_words not in anagrams:
+            anagrams[sorted_words] = []
+        anagrams[sorted_words].append(word)
+    print(anagrams)
+    return anagrams
+ 
+print(group_anagrams(["eat", "tea", "tan", "ate", "nat", "bat"]),
+                    [["eat", "tea", "ate"], ["tan", "nat"], ["bat"]])
+print(group_anagrams([""]), [[""]])
+print(group_anagrams(["a"]), [["a"]])
