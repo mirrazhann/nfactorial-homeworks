@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Пользователи</title>
+  </head>
+  <body>
+    <!-- (сюда писать решение) -->
+    <h1>All Users</h1>
+    <ul>
+        {% for user in users %}
+            <li>
+                <p><b>{{user.first_name}} {{user.last_name}}</b> (ID: {{ user.id }})</p> 
+                <p>username: {{user.username}}</p>
+                <p>email: {{user.email}}</p>
+                <a href="/users/{{user.id}}">profile</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- (конец решения) -->
+  </body>
+</html>
