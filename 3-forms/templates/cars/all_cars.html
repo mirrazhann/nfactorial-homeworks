@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Все машины</title>
+  </head>
+  <body>
+    <h1>Все машины</h1>
+    
+    {% for car in cars %}
+        <div>
+            {{car.id}} - {{car.name}} - {{car.year}}
+        </div>
+    {% endfor %}
+    <br>
+    <br>
+    <a href="/cars/new">Добавить машину</a>
+    <br>
+    <a href="/">На главную</a>
+  </body>
+</html>

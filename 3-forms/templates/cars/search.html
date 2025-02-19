@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Поиск по названию</title>
+  </head>
+  <body>
+    <h1>Поиск по названию</h1>
+    <form method="get" action="/cars/search">
+        <input type="text" name="car_name" value="{{car_name}}" placeholder="Введите название">
+        <input type="submit" value="Искать">
+    </form>
+    {% if error %}
+        <br>
+        <br>
+        <span style="color: red;">{{ error }}</span>
+    {% endif %}
+    {% if cars %}
+      <br>
+      <div><b>Совпадения:</b></div>
+      {% for car in cars %}
+          <div>
+              {{car.id}} - {{car.name}} - {{car.year}}
+          </div>
+      {% endfor %}
+    {% endif %}
+    <br>
+    <br>
+    <a href="/">На главную</a>
+  </body>
+</html>

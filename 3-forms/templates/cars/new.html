@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Добавить машину</title>
+  </head>
+  <body>
+    <h1>Новая машина</h1>
+    <form method="post" action="/cars/new">
+        <div>
+            <input type="text" name="car_name" value="{{ car_name }}" placeholder="Название">
+        </div>
+        <div>
+            <input type="number" name="car_year" value="{{ car_year }}" placeholder="Год выпуска">
+        </div>
+        <input type="submit" value="Добавить">
+    </form>
+    {% if error %}
+        <br>
+        <br>
+        <span style="color: red;">{{ error }}</span>
+    {% endif %}
+    <br>
+    <br>
+    <a href="/">На главную</a>
+  </body>
+</html>
