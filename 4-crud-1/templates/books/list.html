@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список книг</title>
+</head>
+<body>
+    <h3>Список книг:</h3>
+    {% if books %}
+        <ul>
+        {% for book in books %}
+            <li><a href="/books/{{book.id}}">{{book.id}} - {{book.title}}</a></li>
+        {% endfor %}
+        </ul>
+        <br>
+        {% if prev != None%}
+            <a href="/books/?page={{prev}}">Назад</a>
+        {% endif %}
+        {% if next != None%}
+            <a href="/books/?page={{next}}">Вперед</a>
+        {% endif %}
+    {% endif %}
+    <br><br>
+    <a href="/books/new">Добавить книгу</a>
+    <br><br>
+    <a href="/">В меню</a>
+</body>
+</html>

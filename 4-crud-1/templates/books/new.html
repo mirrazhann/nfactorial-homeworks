@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Добавить Книгу</title>
+  </head>
+  <body>
+    <h1>Новая книга</h1>
+    <form method="post" action="/books/new">
+        <div>
+            Название:<br>
+            <input type="text" name="title" value="{{ title }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Автор:<br>
+            <input type="text" name="author" value="{{ author }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Год издания:<br>
+            <input type="number" name="year" value="{{ year or 0 }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Количество страниц:<br>
+            <input type="number" name="total_pages" value="{{ total_pages or 0 }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Жанр:<br>
+            <input type="text" name="genre" value="{{ genre }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <input type="submit" value="Добавить">
+    </form>
+    {% if error %}
+        <br>
+        <br>
+        <span style="color: red;">{{ error }}</span>
+    {% endif %}
+    <br>
+    <br>
+    <a href="/">На главную</a>
+  </body>
+</html>
