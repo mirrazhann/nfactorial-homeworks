@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Изменить</title>
+  </head>
+  <body>
+    <h1>Редактирование книги</h1>
+    <form method="post" action="/books/{{book.id}}/edit">
+        <div>
+            Название:<br>
+            <input type="text" name="title" value="{{ book.title }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Автор:<br>
+            <input type="text" name="author" value="{{ book.author }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Год издания:<br>
+            <input type="number" name="year" value="{{book.year }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Количество страниц:<br>
+            <input type="number" name="total_pages" value="{{ book.total_pages }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <div>
+            Жанр:<br>
+            <input type="text" name="genre" value="{{ book.genre }}" placeholder="" style="margin-bottom: 10px">
+        </div>
+        <input type="hidden" name="book_id" value="{{book.id}}">
+        <input type="submit" value="Изменить">
+    </form>
+    {% if error %}
+        <br>
+        <br>
+        <span style="color: red;">{{ error }}</span>
+    {% endif %}
+    <br>
+    <br>
+    <a href="/">На главную</a>
+  </body>
+</html>

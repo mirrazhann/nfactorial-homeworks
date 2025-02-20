@@ -42,8 +42,7 @@ class BookRepository:
         return self.books[start:end]
     
     def get_len(self):
-        last_id = self.books[-1]["id"] + 1
-        return last_id
+        return len(self.books)
     
     def get_one(self, id:int):
         book = next((book for book in self.books if book["id"] == id), [])
@@ -56,4 +55,22 @@ class BookRepository:
         return book
     
     def get_new_id(self):
-        return len(self.books)+1
+        last_id = self.books[-1]["id"] + 1
+        return last_id
+    
+    def delete(self, id):
+        for index, book in enumerate(self.books):
+            if book["id"] == id:
+                self.books.pop(index)
+                return
+        return
+    
+    def update(self, book_new):
+        for book in self.books:
+            if book["id"] == book_new["id"]:
+                book["title"] = book_new["title"]
+                book["author"] = book_new["author"]
+                book["year"] = book_new["year"]
+                book["total_pages"] = book_new["total_pages"]
+                book["genre"] = book_new["genre"]
+                return 

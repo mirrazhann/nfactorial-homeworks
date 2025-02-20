@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка книги</title>
+</head>
+<body>
+    <h3>{{book.title}}</h3>
+    автор: {{book.author}}
+    <br>
+    год издания: {{book.year}}
+    <br>
+    количество страниц: {{book.total_pages}}
+    <br>
+    жанр: {{book.genre}}
+    <br>
+    <br>
+    <a href="/books/{{book.id}}/edit">Изменить</a>
+    <br>
+    <br>
+    <a href="/books">Список книг</a>
+    <br>
+    <br>
+    <form action="/books/{{book.id}}/delete" method="post">
+        <input type="hidden" value="{{book.id}}" name="book_id">
+        <input type="submit" value="Удалить книгу">
+    </form>
+</body>
+</html>
