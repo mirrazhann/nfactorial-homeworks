@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог цветов</title>
+</head>
+<body>
+    <h1>Каталог цветов</h1>
+    {% for flower in flowers %}
+        <div style="border-bottom: 1px solid grey; margin-bottom: 30px; padding-bottom: 15px;">
+            <h3>{{flower.name}}</h3>
+            <p>Количество: {{flower.count}}</p>
+            <p>Цена: {{flower.price}}</p>
+            {% if flower.count > 0 and flower.price > 0 %}
+                <form action="/cart/items" method="post">
+                    <input type="hidden" name="flower_id" value="{{flower.id}}">
+                    <input type="submit" value="Добавить в корзину">
+                </form>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <form action="/flowers" method="post">
+        <h4>Добавить новый цветок в каталог</h4>
+        <div>
+            <span style="margin-right: 10px">Название:</span>
+            <input type="flower_name" name="flower_name" id="flower_name" value="" style="margin-bottom: 15px;">
+        </div>
+        <div>
+            <span style="margin-right: 10px">Количество:</span>
+            <input type="number" name="count" id="countl" value="" style="margin-bottom: 15px;">
+        </div>
+        <div>
+            <span style="margin-right: 10px">Цена:</span>
+            <input type="number" name="price" id="price" value="" style="margin-bottom: 15px;">
+        </div>
+        <div>
+            <input type="submit" value="Добавить" style="margin-bottom: 15px;">
+        </div>
+    </form>
+    <p><a href="/cart/items">В корзину</a></p>
+</body>
+</html>

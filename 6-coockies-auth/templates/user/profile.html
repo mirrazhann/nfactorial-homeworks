@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Личный кабинет</h1>
+    {% if photo_b64 != "" %}
+        <img src="data:image/jpeg;base64,{{photo_b64}}" alt="{{user.name}}" width="200" alt="{{user.name}}">
+    {% endif %}
+    <p><b>ФИО:</b> {{user.name}}</p>
+    <p><b>email:</b> {{user.email}}</p>
+    <p></p>
+    <p></p>
+    <ul>
+        <li>    
+            <a href="/flowers">Каталог цветов</a>
+        </li>
+        <li>    
+            <a href="/purchase">Заказы</a>
+        </li>
+    </ul>
+</body>
+</html>

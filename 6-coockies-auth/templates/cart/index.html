@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Корзина</title>
+</head>
+<body>
+    <h1>Корзина</h1>
+    {% if flowers %}
+        <ol>
+        {% for flower in flowers %}
+            <li>{{flower.name}}: {{flower.price}}</li>
+        {% endfor %}
+        </ol>
+    {% endif %}
+    {% if total_price %}
+        <p><b>Сумма: {{total_price}}</b></p>
+    {% endif %}
+</body>
+</html>

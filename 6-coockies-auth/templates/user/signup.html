@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <form action="/signup" method="post" enctype="multipart/form-data">
+        <div>
+            <span style="margin-right: 10px">Email:</span>
+            <input type="email" name="email" id="email" value="" style="margin-bottom: 15px;">
+        </div>
+        <div>
+            <span style="margin-right: 10px">ФИО:</span>
+            <input type="text" name="user_name" id="name" value="" style="margin-bottom: 15px;">
+        </div>
+        <div>
+            <span style="margin-right: 10px">Пароль:</span>
+            <input type="password" name="password" id="password" value="" style="margin-bottom: 15px;">
+        </div>
+        <div>
+            <span style="margin-right: 10px">Фото:</span>
+            <input type="file" name="foto" style="margin-bottom: 15px;">
+        </div>
+        <div>
+            <input type="submit" value="Зарегистрироваться" style="margin-bottom: 15px;">
+        </div>
+    </form>
+    <!-- {% for user in users %}
+        {{user.id}} - {{user.name}} - {{user.email}}<br>
+        {{user.foto}}<br><br>
+    {% endfor %} -->
+</body>
+</html>
